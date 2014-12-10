@@ -79,7 +79,11 @@ BST<Key, T>::BST(){
 
 template <class Key, class T>
 BST<Key, T>::~BST(){
-	//TODO
+	//Found this on stack overflow
+	while (root != NULL) {
+		root = remove(root->k, root);
+	}
+	root = NULL;
 }
 
 //Return the number of items currently in the SSet
